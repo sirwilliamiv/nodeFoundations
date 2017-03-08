@@ -1,0 +1,60 @@
+
+{
+"Employees" : [
+{
+"jobTitleName":"Developer",
+"firstName":"Romin",
+"lastName":"Irani",
+"address":"4534534 ways up",
+"employeeCode": 1,
+"phoneNumber":"408-1234567",
+"salary":80000
+},
+{
+"jobTitleName":"Worker",
+"firstName":"steve",
+"lastName":"john",
+"address":"4534534 ways up",
+"employeeCode": 34,
+"phoneNumber":"408-1234567",
+"salary":80000
+},
+
+{
+"jobTitleName":"Crane",
+"firstName":"bingo",
+"lastName":"bobby",
+"address":"4534534 ways up",
+"employeeCode":56,
+"phoneNumber":"408-1234567",
+"salary":80000
+},
+{
+"jobTitleName":"Drummer",
+"firstName":"jazz",
+"lastName":"keeps",
+"address":"4534534 ways up",
+"employeeCode": 564,
+"phoneNumber":"408-1234567",
+"salary":80000
+},
+{
+"jobTitleName":"Developer",
+"firstName":"stlin",
+"lastName":"yes",
+"address":"4534534 ways up",
+"employeeCode": 78,
+"phoneNumber":"408-1234567",
+"salary":80000
+},
+{
+"jobTitleName":"Developer",
+"firstName":"forty",
+"lastName":"liz",
+"address":"4534534 ways down",
+"employeeCode": 23,
+"phoneNumber":"408-1234567",
+"salary":80000
+}
+]
+}
