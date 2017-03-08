@@ -2,22 +2,26 @@
 
 const sqlite3 = require('sqlite3').verbose(); // verbose helps track errors
 const db = new sqlite3.Database('employees.sqlite', (err) => console.log('Connected')); //or .db extension
+const dropEmployees = () => {
+  db.run(`DROP TABLE employees`)
+};
+// dropEmployees();
 
+db.run(`CREATE TABLE IF NOT EXISTS employees (id INT, first TEXT, last TEXT,address TEXT,title TEXT ,salary INT)`);
 
-db.run(`CREATE TABLE IF NOT EXISTS employees (id INT, first TEXT, last TEXT,address TEXT, salary INT)`);
-// db.run(`INSERT INTO employees VALUES (1, "Ashley", "Irwin", 50000.86)`)
 
 
 // Write a statement to query the database and console.log() all employee records.
 const populateEmployees = () => {
     const { Employees } = require('./employees.json');
     // console.log(Employees)
-    Employees.forEach(({ employeeCode, firstName, lastName, address, salary }) => {
+    Employees.forEach(({ employeeCode, firstName, lastName, address, jobTitleName, salary }) => {
       db.run(`INSERT INTO employees VALUES(
       ${employeeCode},
       "${firstName}",
       "${lastName}",
       "${address}",
+      "${jobTitleName}",
       ${salary}
       )`)
     })
@@ -25,12 +29,10 @@ const populateEmployees = () => {
   // populateEmployees();
   // Write a statement to query the database and console.log() each employees jobTitle.
 const jobTitle = () => {
-
-  console.log(Employees)
-  db.each(`SELECT * FROM Employees`, (err, { jobTitleName, firstName, lastName }) => {
+  db.each(`SELECT * FROM employees`, (err, { title, first, last }) => {
     if(err) throw err
     // console.log(employees)
-    console.log(`${firstName} ${lastName}: ${jobTitleName}`)
+    console.log(`${first} ${last}: ${title}`)
   })
 }
 jobTitle()
