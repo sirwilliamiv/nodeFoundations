@@ -27,7 +27,7 @@ const calculator = ({ num1, num2, operator }) => {
   let actionOperator = pickOperator(operator)
     //based on operator
   return actionOperator(num1,num2)
-    // "add"(num1,num2);
+    // add(num1,num2);
     //perform this returns method
 }
 
