@@ -7,6 +7,7 @@ const addThis = (item,name)=> {
     item = item;
     name = name;
 // children
+//if get returns null
 db.run(`INSERT INTO children VALUES (null, "${name}", 0)`)
 db.get(`SELECT nameId FROM children WHERE name = "${name}"`,(err,result)=> {
   if (err) {throw err}
